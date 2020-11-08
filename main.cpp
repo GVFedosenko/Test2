@@ -6,7 +6,7 @@
 using namespace std;
 
 void Copy() {
-    string line;
+    string line, choice1, choice2;
     ifstream man("Test.txt", ios::in);
     getline(man, line);
     man.close();
@@ -23,6 +23,34 @@ void Create() {
     Name << "Пустой файл";
 }
 
+void Delete()
+{
+    string line, name;
+    cout << "Введите имя файла: "; cin >> name;
+    ifstream man("pacifier.txt", ios::in);
+    getline(man, line);
+    man.close();
+    ofstream in(name);
+    in << line;
+}
+
 int main() {
-    
+    cout << "+++++++++++++++++++++++++++" << endl;
+    cout << "Menu:" << endl;
+    cout << "1. New File" << endl;
+    cout << "2. Copi file" << endl;
+    cout << "3. Change file" << endl;
+    cout << "4. Unistall file " << endl;
+    cout << "0. Exit" << endl;
+    cout << "+++++++++++++++++++++++++++" << endl;
+    char symbol;
+    if (symbol == '1') {
+        Create();
+    } else if (symbol == '2') {
+        Copy();
+    } else if (symbol == '3') {
+
+    } else if (symbol == '4') {
+        Delete();
+    }
 }
